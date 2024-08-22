@@ -1,0 +1,46 @@
+/* Estilos para galeria */
+.gallery {
+    display: flex;
+    flex-wrap: wrap; /* Permite que as imagens quebrem para a próxima linha */
+    gap: 20px; /* Espaço entre as imagens */
+    padding: 10px;
+    justify-content: space-around; /* Distribui as imagens horizontalmente */
+}
+
+.gallery img {
+    width: calc(33.33% - 20px); /* Calcula a largura para três imagens por linha com espaçamento */
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    color: blue; /* Cor do texto descritivo das imagens */
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0.8); /* Fundo vermelho com transparência */
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+}
+
+/* Estilizando o texto descritivo das imagens na lightbox */
+.lightbox .gallery img {
+    color: blue; /* Cor do texto */
+}

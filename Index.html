@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Galeria de Fotos</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link para o arquivo CSS externo -->
+</head>
+<body>
+    
+    <h1>NOSSAS FOTOS</h1>
+
+    <div class="gallery">
+        <img src="img1.jpg" alt="Descrição da imagem 1" onclick="playMusic('Iris.mp3.m4a')">
+        <img src="img2.jpg" alt="Descrição da imagem 2" onclick="playMusic('Make You Mine.mp3.m4a')">
+        <img src="img3.jpg" alt="Descrição da imagem 3" onclick="playMusic('This Side of Paradise.mp3.m4a')">
+        <img src="img4.jpg" alt="Descrição da imagem 4" onclick="playMusic('Musica4.mp3')">
+        <img src="img5.jpg" alt="Descrição da imagem 5" onclick="playMusic('Musica5.mp3')">
+        <img src="img6.jpg" alt="Descrição da imagem 6" onclick="playMusic('Musica6.mp3')">
+        <img src="img7.jpg" alt="Descrição da imagem 7" onclick="playMusic('Musica7.mp3')">
+        <!-- Adicione mais imagens conforme necessário -->
+    </div>
+
+    <audio id="audio" controls>
+        <source id="audio-source" src="" type="audio/mp3">
+        Seu navegador não suporta áudio HTML5.
+    </audio>
+
+    <div class="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Imagem em destaque">
+    </div>
+
+    <script>
+        function playMusic(audioUrl) {
+            document.getElementById('audio-source').src = audioUrl;
+            document.getElementById('audio').load(); // Carrega o novo áudio
+            document.getElementById('audio').play(); // Inicia a reprodução da música
+        }
+
+        function openLightbox(imageUrl) {
+            document.getElementById('lightbox-img').src = imageUrl;
+            document.querySelector('.lightbox').style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            document.querySelector('.lightbox').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
